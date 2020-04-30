@@ -1,5 +1,5 @@
 {
-  "ndkFolder": "C:\\Users\\sharm\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669",
+  "ndkFolder": "C:\\Users\\jinju\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669",
   "messages": [
     {
       "level": "INFO",
@@ -7,7 +7,7 @@
     },
     {
       "level": "INFO",
-      "message": "ndk.dir in local.properties is C:\\Users\\sharm\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
+      "message": "ndk.dir in local.properties is C:\\Users\\jinju\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669"
     },
     {
       "level": "INFO",
@@ -15,27 +15,23 @@
     },
     {
       "level": "INFO",
-      "message": "sdkFolder is C:\\Users\\sharm\\AppData\\Local\\Android\\Sdk"
+      "message": "sdkFolder is C:\\Users\\jinju\\AppData\\Local\\Android\\Sdk"
     },
     {
       "level": "INFO",
-      "message": "Considering C:\\Users\\sharm\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669 by ndk.dir"
+      "message": "Considering C:\\Users\\jinju\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669 by ndk.dir"
     },
     {
       "level": "INFO",
-      "message": "Considering C:\\Users\\sharm\\AppData\\Local\\Android\\Sdk\\ndk-bundle in SDK ndk-bundle folder"
+      "message": "Considering C:\\Users\\jinju\\AppData\\Local\\Android\\Sdk\\ndk-bundle in SDK ndk-bundle folder"
     },
     {
       "level": "INFO",
-      "message": "Considering C:\\Users\\sharm\\AppData\\Local\\Android\\Sdk\\ndk\\20.0.5594570 in SDK ndk folder"
+      "message": "Considering C:\\Users\\jinju\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669 in SDK ndk folder"
     },
     {
       "level": "INFO",
-      "message": "Considering C:\\Users\\sharm\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669 in SDK ndk folder"
-    },
-    {
-      "level": "INFO",
-      "message": "Found requested ndk.dir (C:\\Users\\sharm\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669) which has version 21.0.6113669"
+      "message": "Found requested ndk.dir (C:\\Users\\jinju\\AppData\\Local\\Android\\Sdk\\ndk\\21.0.6113669) which has version 21.0.6113669"
     }
   ]
 }

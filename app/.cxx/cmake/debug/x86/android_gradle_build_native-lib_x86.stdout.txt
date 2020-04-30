@@ -1,3 +1,0 @@
-ninja: Entering directory `C:\OpenGLES_HW2\app\.cxx\cmake\debug\x86'
-[1/2] Building CXX object CMakeFiles/native-lib.dir/src/main/cpp/src/scene.cpp.o
-[2/2] Linking CXX shared library ..\..\..\..\build\intermediates\cmake\debug\obj\x86\libnative-lib.so
