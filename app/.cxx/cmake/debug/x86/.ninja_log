@@ -1,0 +1,21 @@
+# ninja log v5
+94	7674	609159772	CMakeFiles/native-lib.dir/src/main/cpp/src/program.cpp.o	f749e1e87b9f09b6
+1	7757	609159772	CMakeFiles/native-lib.dir/src/main/cpp/src/asset.cpp.o	c9bfcf1f3d6b981b
+25	7764	609159772	CMakeFiles/native-lib.dir/src/main/cpp/src/shader.cpp.o	c888dc8789beac95
+161	7788	609159772	CMakeFiles/native-lib.dir/src/main/cpp/src/light.cpp.o	44100eccb65e165d
+86	8051	609159772	CMakeFiles/native-lib.dir/src/main/cpp/src/camera.cpp.o	e75e3e20ff26e0fc
+102	8196	609159772	CMakeFiles/native-lib.dir/src/main/cpp/src/material.cpp.o	6d679194d31aee67
+14	8312	609159772	CMakeFiles/native-lib.dir/src/main/cpp/src/main.cpp.o	9d0ac7ace15304f1
+170	8576	609159773	CMakeFiles/native-lib.dir/src/main/cpp/src/object.cpp.o	6fae124e677323f3
+110	8686	609159773	CMakeFiles/native-lib.dir/src/main/cpp/src/texture.cpp.o	5008f4dd60adb2f6
+9	7033	609160005	CMakeFiles/native-lib.dir/src/main/cpp/src/scene.cpp.o	27ed8cfd56c161f5
+19	6664	609160135	CMakeFiles/native-lib.dir/src/main/cpp/src/scene.cpp.o	27ed8cfd56c161f5
+12	4883	609160452	CMakeFiles/native-lib.dir/src/main/cpp/src/scene.cpp.o	27ed8cfd56c161f5
+14	4776	609160485	CMakeFiles/native-lib.dir/src/main/cpp/src/scene.cpp.o	27ed8cfd56c161f5
+11	5110	609161032	CMakeFiles/native-lib.dir/src/main/cpp/src/main.cpp.o	9d0ac7ace15304f1
+22	8396	609161035	CMakeFiles/native-lib.dir/src/main/cpp/src/scene.cpp.o	27ed8cfd56c161f5
+8396	8692	609161036	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	7fcff13a0e0a6cb2
+18	3627	609232512	CMakeFiles/native-lib.dir/src/main/cpp/src/main.cpp.o	9d0ac7ace15304f1
+33	3875	609232512	CMakeFiles/native-lib.dir/src/main/cpp/src/texture.cpp.o	5008f4dd60adb2f6
+9	3642	609232538	CMakeFiles/native-lib.dir/src/main/cpp/src/scene.cpp.o	27ed8cfd56c161f5
+3642	3921	609232538	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	7fcff13a0e0a6cb2

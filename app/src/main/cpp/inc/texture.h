@@ -1,0 +1,29 @@
+#ifndef HW2_TEXTURE_H
+#define HW2_TEXTURE_H
+
+#include "global.h"
+#include "program.h"
+#include "texel.h"
+
+class Texture {
+public:
+    Texture(Program* program, const int number, const string name,
+        const vector<Texel>& data, const GLsizei size);
+    Texture(Program* program, const int number, const string name,
+            const vector<unsigned char>& data, const GLsizei size);
+    virtual ~Texture(void);
+
+    virtual void update(void) const;
+
+private:
+    GLuint id;
+    Program* program;
+    int number;
+    string name;
+    virtual void create(Program* program, const int number, const string name);
+    virtual void loadPNG(const vector<unsigned char>& data, const GLsizei size);
+    virtual void load(const vector<Texel>& data, const GLsizei size);
+    virtual void destroy(void);
+};
+
+#endif //HW2_TEXTURE_H
