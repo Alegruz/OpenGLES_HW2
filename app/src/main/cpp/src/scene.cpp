@@ -2,6 +2,12 @@
 #include "binary/teapot.h"
 #include "binary/floral.h"
 #include "binary/cloud.h"
+#include "binary/checker.h"
+#include "binary/down_pusheen.h"
+
+#include <iostream>
+#include <string>
+#include <vector>
 
 Shader* Scene::vertexShader = nullptr;
 Shader* Scene::fragmentShader = nullptr;
@@ -31,7 +37,7 @@ void Scene::setup(AAssetManager* aAssetManager) {
     lightR->position = vec3(9.0f, 9.0f, -3.0f);
 
     //change here.
-    Scene::diffuse = new Texture(Scene::program, 0, "textureDiff", floralTexels, floralSize);
+    Scene::diffuse = new Texture(Scene::program, 0, "textureDiff", pusheenTexels, pusheenSize);
     // Scene::dissolve = ;
     Scene::material = new Material(Scene::program, diffuse, nullptr);
     Scene::teapot = new Object(program, material, teapotVertices, teapotIndices);

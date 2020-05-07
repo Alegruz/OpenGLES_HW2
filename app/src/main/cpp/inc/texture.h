@@ -8,9 +8,9 @@
 class Texture {
 public:
     Texture(Program* program, const int number, const string name,
-        const vector<Texel>& data, const GLsizei size);
+            const vector<Texel>& data, const GLsizei size);
     Texture(Program* program, const int number, const string name,
-            const vector<unsigned char>& data, const GLsizei size);
+            const string& fileName, const GLsizei size);
     virtual ~Texture(void);
 
     virtual void update(void) const;
@@ -20,8 +20,10 @@ private:
     Program* program;
     int number;
     string name;
+    unsigned int mWidth;
+    unsigned int mHeight;
     virtual void create(Program* program, const int number, const string name);
-    virtual void loadPNG(const vector<unsigned char>& data, const GLsizei size);
+    virtual void loadPNG(const string& fileName, const GLsizei size);
     virtual void load(const vector<Texel>& data, const GLsizei size);
     virtual void destroy(void);
 };

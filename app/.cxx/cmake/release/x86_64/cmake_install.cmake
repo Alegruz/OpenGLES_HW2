@@ -1,4 +1,4 @@
-# Install script for directory: C:/OpenGLES_HW2/app
+# Install script for directory: C:/Users/jinju/StudioProjects/OpenGLES_HW2/app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/OpenGLES_HW2/app/.cxx/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/jinju/StudioProjects/OpenGLES_HW2/app/.cxx/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
