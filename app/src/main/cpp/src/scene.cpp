@@ -38,6 +38,7 @@ void Scene::setup(AAssetManager* aAssetManager) {
 
     //change here.
     Scene::diffuse = new Texture(Scene::program, 0, "textureDiff", pusheenTexels, pusheenSize);
+//    Scene::diffuse = new Texture(Scene::program, 0, "textureDiff", checkerTexels, checkerSize);
     // Scene::dissolve = ;
     Scene::material = new Material(Scene::program, diffuse, nullptr);
     Scene::teapot = new Object(program, material, teapotVertices, teapotIndices);
