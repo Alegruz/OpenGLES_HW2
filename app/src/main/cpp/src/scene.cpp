@@ -49,9 +49,9 @@ void Scene::screen(int width, int height) {
 }
 
 void Scene::update(float deltaTime) {
-    static float time = deltaTime;
+    static float time = 0.0f;
     Scene::program->use();
-    time += deltaTime;
+    time += deltaTime * 3;
 
     Scene::teapot->material->threshold = abs(sin(10 * radians(time)));
     Scene::teapot->material->displacement = Scene::teapot->material->threshold;

@@ -20,6 +20,7 @@ out vec3 v_reflL, v_reflR;
 void main()
 {
     // vertex displacement
+//    vec3 displacedPos = position + displacement * normal;
     vec3 displacedPos = position + displacement * normal;
 
     // world-space position
