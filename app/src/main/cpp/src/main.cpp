@@ -6,6 +6,8 @@ void surfaceCreated(AAssetManager* aAssetManager) {
 
     // Add some functions to enable alpha blending`
     // alpha_dest = 1 - alpha_src. Please find opengl blending functions.
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     Scene::setup(aAssetManager);
 }

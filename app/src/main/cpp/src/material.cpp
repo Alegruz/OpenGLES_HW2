@@ -35,6 +35,7 @@ void Material::create(Program* program, Texture* textureDiff, Texture* textureDi
 void Material::update() const {
     if (textureDiff) textureDiff->update();
     if (textureDissolve) textureDissolve->update();
+    else LOG_PRINT_ERROR("Fail to update textureDissolve");
 
     GLint matSpecLoc = glGetUniformLocation(program->get(), "matSpec");
     GLint matAmbiLoc = glGetUniformLocation(program->get(), "matAmbi");

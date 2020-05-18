@@ -20,7 +20,7 @@ out vec3 v_reflL, v_reflR;
 void main()
 {
     // vertex displacement
-    vec3 displacedPos = position;
+    vec3 displacedPos = position + displacement * normal;
 
     // world-space position
     vec3 worldPos = ( worldMat * vec4( displacedPos, 1.0 ) ).xyz;
@@ -42,10 +42,10 @@ void main()
     v_reflR = 2.0 * worldNormal * dot( worldNormal, v_lightR ) - v_lightR;
 
     // attenuations
-    // float distL = ;
-    // float distR = ;
-    // v_attL = ;
-    // v_attR = ;
+    float distL = length(lightPosL - worldPos);
+    float distR = length(lightPosR - worldPos);
+    v_attL = (1.0 / (lightAttL[0] + lightAttL[1] * distL + lightAttL[2] * distL * distL));
+    v_attR =  (1.0 / (lightAttR[0] + lightAttR[1] * distR + lightAttR[2] * distR * distR));
 
     // texture coordinates
     v_texCoord = texCoord;

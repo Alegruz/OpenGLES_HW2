@@ -4,7 +4,7 @@
 
 Texture::Texture(Program *program, const int number, const string name,
                  const vector<Texel> &data, const GLsizei size)
-        : mWidth(size), mHeight(size)
+                 : id(0)
 {
     create(program, number, name);
     load(data, size);
@@ -31,8 +31,9 @@ void Texture::create(Program* program, const int number, const string name) {
     if (id == 0)
         LOG_PRINT_ERROR("Fail to generate texture: %s", this->name.c_str());
 
+
     if (glGetUniformLocation(program->get(), this->name.c_str()) < 0)
-        LOG_PRINT_WARN("Fail to get uniform location: %s", this->name.c_str());
+        LOG_PRINT_WARN("Fail to get uniform location: %s, %d", this->name.c_str(), glGetUniformLocation(program->get(), this->name.c_str()));
 }
 
 void Texture::load(const vector<Texel> &data, const GLsizei size) {
@@ -93,7 +94,7 @@ void Texture::update() const {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
     if (textureLoc >= 0) glUniform1i(textureLoc, number);
-    else LOG_PRINT_ERROR("Fail to get uniform location: %s", this->name.c_str());
+    else LOG_PRINT_ERROR("Fail to get uniform location: %s, %d", this->name.c_str(), glGetUniformLocation(program->get(), this->name.c_str()));
 }
 
 void Texture::destroy() {

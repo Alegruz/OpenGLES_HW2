@@ -20,8 +20,6 @@ private:
     Program* program;
     int number;
     string name;
-    unsigned int mWidth;
-    unsigned int mHeight;
     virtual void create(Program* program, const int number, const string name);
     virtual void loadPNG(const string& fileName, const GLsizei size);
     virtual void load(const vector<Texel>& data, const GLsizei size);

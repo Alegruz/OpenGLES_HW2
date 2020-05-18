@@ -39,8 +39,8 @@ void Scene::setup(AAssetManager* aAssetManager) {
     //change here.
     Scene::diffuse = new Texture(Scene::program, 0, "textureDiff", pusheenTexels, pusheenSize);
 //    Scene::diffuse = new Texture(Scene::program, 0, "textureDiff", checkerTexels, checkerSize);
-    // Scene::dissolve = ;
-    Scene::material = new Material(Scene::program, diffuse, nullptr);
+    Scene::dissolve = new Texture(Scene::program, 1, "textureDissolve", cloudTexels, cloudSize);
+    Scene::material = new Material(Scene::program, diffuse, dissolve);
     Scene::teapot = new Object(program, material, teapotVertices, teapotIndices);
 }
 
@@ -49,11 +49,12 @@ void Scene::screen(int width, int height) {
 }
 
 void Scene::update(float deltaTime) {
-
+    static float time = deltaTime;
     Scene::program->use();
+    time += deltaTime;
 
-    // Scene::teapot->material->threshold = ;
-    // Scene::teapot->material->displacement = ;
+    Scene::teapot->material->threshold = abs(sin(10 * radians(time)));
+    Scene::teapot->material->displacement = Scene::teapot->material->threshold;
 
     Scene::camera->update();
     Scene::lightL->update();

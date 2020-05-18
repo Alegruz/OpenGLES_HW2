@@ -23,43 +23,55 @@ layout(location = 0) out vec4 fragColor;
 void main()
 {
     // re-normalize unit vectors (normal, view, and light vectors)
-//    vec3 normal = normalize( v_normal );
-    vec3 view = normalize( v_view );
-    vec3 lightL = normalize( v_lightL );
-    vec3 lightR = normalize( v_lightR );
-    vec3 reflL = normalize( v_reflL );
-    vec3 reflR = normalize( v_reflR );
+    //    vec3 normal = normalize( v_normal );
+    vec3 view = normalize(v_view);
+    vec3 lightL = normalize(v_lightL);
+    vec3 lightR = normalize(v_lightR);
+    vec3 reflL = normalize(v_reflL);
+    vec3 reflR = normalize(v_reflR);
 
     // diffuse term
-    vec4 albedo = texture( textureDiff, v_texCoord );
+    vec4 albedo = texture(textureDiff, v_texCoord);
+
 //    vec3 diffL = max( v_diffL, 0.0 ) * srcDiffL * matDiff;
 //    vec3 diffR = max( v_diffR, 0.0 ) * srcDiffR * matDiff;
-    vec3 diffL = max( v_diffL, 0.0 ) * srcDiffL;
-    vec3 diffR = max( v_diffR, 0.0 ) * srcDiffR;
-    vec3 diff = clamp( (diffL + diffR) * albedo.xyz, 0.0, 1.0 );
+//    vec3 diffL = max(v_diffL, 0.0) * srcDiffL * v_attL;
+//    vec3 diffR = max(v_diffR, 0.0) * srcDiffR * v_attR;
+    vec3 diffL = max(v_diffL, 0.0) * srcDiffL;
+    vec3 diffR = max(v_diffR, 0.0) * srcDiffR;
+//    vec3 diff = clamp((diffL * v_attL + diffR * v_attL) * albedo.xyz, 0.0, 1.0);
+//    vec3 diff = clamp((diffL + diffR) * albedo.xyz, 0.0, 1.0);
+    vec3 diff = (diffL + diffR) * albedo.xyz;
 
     // specular term
-//    vec3 reflL = 2.0 * normal * dot( normal, lightL ) - lightL;
-//    vec3 reflR = 2.0 * normal * dot( normal, lightR ) - lightR;
+    //    vec3 reflL = 2.0 * normal * dot( normal, lightL ) - lightL;
+    //    vec3 reflR = 2.0 * normal * dot( normal, lightR ) - lightR;
 
-    vec3 specL = pow( clamp( max( dot( reflL, -view ), 0.0), 0.0, 1.0 ), matSh ) * srcSpecL;
-    vec3 specR = pow( clamp( max( dot( reflR, -view ), 0.0), 0.0, 1.0 ), matSh ) * srcSpecR;
-//    float specularValueL = clamp( dot( reflL, -view ), 0.0, 1.0 );
-//    float specularValueR = clamp( dot( reflR, -view ), 0.0, 1.0 );
-//    vec3 spec = vec3( specularValueL + specularValueR );
-    vec3 spec = ( specL + specR ) * matSpec;
+//    vec3 specL = pow(clamp(max(dot(reflL, -view), 0.0), 0.0, 1.0), matSh) * srcSpecL;
+//    vec3 specR = pow(clamp(max(dot(reflR, -view), 0.0), 0.0, 1.0), matSh) * srcSpecR;
+    vec3 specL = pow(max(dot(reflL, -view), 0.0), matSh) * srcSpecL * v_attL;
+    vec3 specR = pow(max(dot(reflR, -view), 0.0), matSh) * srcSpecR * v_attR;
+//    vec3 specL = pow(max(dot(reflL, -view), 0.0), matSh) * srcSpecL;
+//    vec3 specR = pow(max(dot(reflR, -view), 0.0), matSh) * srcSpecR;
+    //    float specularValueL = clamp( dot( reflL, -view ), 0.0, 1.0 );
+    //    float specularValueR = clamp( dot( reflR, -view ), 0.0, 1.0 );
+    //    vec3 spec = vec3( specularValueL + specularValueR );
+    vec3 spec = (specL + specR) * matSpec;
 
     // ambient term
+//    vec3 ambiL = srcAmbiL * v_attL;
+//    vec3 ambiR = srcAmbiR * v_attR;
     vec3 ambiL = srcAmbiL;
     vec3 ambiR = srcAmbiR;
-    vec3 ambi = ( ambiL + ambiR ) * matAmbi;
+    vec3 ambi = (ambiL + ambiR) * matAmbi;
 
     float alpha = 1.0f;
 
     // dissolving
-    // float dissolve = ;
-    // if (dissolve < threshold)
-    //    alpha = 0.0;
+    vec4 dissolveColor = texture(textureDissolve, v_texCoord);
+    float dissolve = (dissolveColor.x + dissolveColor.y + dissolveColor.z) / 3.0;
+    if (dissolve < threshold)
+        alpha = 0.0;
 
     // final output color with alpha
     fragColor = vec4(diff + spec + ambi + matEmit, alpha);
